@@ -9,24 +9,7 @@ correspondante a la regularite d un tableau exploitable
 
 """
 
-
-def readData(fileName):
-   f = open(fileName, "r", encoding="utf-8")
-   data = f.readlines()
-   f.close()
-   return data
-
-def readData2(fileName):
-   f = open(fileName, "r")
-   data = f.readlines()
-   f.close()
-   return data
-
-#recherche de la premiere regularite dans un ficchier cvs
-#csvlignes = premieres lignes d un fichier csv
-#limitemax = profondeur maximale de l exploration
-#traceon 
-
+import collections
 
 def moyenf(tableau):
     return sum(tableau, 0.0) / len(tableau)
@@ -34,9 +17,6 @@ def moyenf(tableau):
 def variance(tableau):
     m=moyenf(tableau)
     return moyenf([(x-m)**2 for x in tableau])
-
-#Version Vanilla
-import collections
 
 """Premiere methode par comptage des separateurs
    retourne :
